@@ -1,0 +1,66 @@
+<title>Enquiry</title>
+<div class="logo-wrapper">
+    <img src="assets/logo.png" alt="Company Logo" class="logo-image">
+</div>
+<h1 class="heading-primary">Enquiry</h1>
+<h2 class="heading-secondary">Contact us for an enquiry</h2>
+<mat-card class="enquiry-card">
+    <mat-card-content>
+        <form class="form-group">
+            <label for="Name">Name<span class="required-asterisk">*</span></label>
+            <mat-form-field appearance="fill" class="input-field">
+                <input matInput placeholder="Name" id="name" required pattern="[a-zA-Z\s]*">
+                <mat-hint align="end">This field is required*</mat-hint>
+            </mat-form-field>
+        </form>
+        <form class="form-group">
+            <label for="Email">Email<span class="required-asterisk">*</span></label>
+            <mat-form-field class="input-field">
+                <mat-label>Email</mat-label>
+                <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+                    placeholder="Ex. pat@example.com">
+                <mat-hint>enter a valid email id</mat-hint>
+                <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                    Please enter a valid email address
+                </mat-error>
+                <mat-error *ngIf="emailFormControl.hasError('required')">
+                    Email is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </form>
+        <form class="form-group">
+            <label for="PhoneNumber">Phone<span class="required-asterisk">*</span></label>
+            <mat-form-field class="input-field">
+                <input type="tel" matInput placeholder="Enter your phone number" id="PhoneNumber" pattern="[0-9]*">
+                <mat-hint align="start">Please enter a valid Phone No</mat-hint>
+            </mat-form-field>
+        </form>
+        <form class="form-group">
+            <label>Select<span class="required-asterisk">*</span></label>
+            <section class="checkbox-group">
+                <mat-checkbox class="checkbox-item">Textile ERP PRO</mat-checkbox>
+                <mat-checkbox class="checkbox-item">Spinning ERP</mat-checkbox>
+                <mat-checkbox class="checkbox-item">Weaving ERP</mat-checkbox>
+                <mat-checkbox class="checkbox-item">Home Textile ERP</mat-checkbox>
+                <mat-checkbox class="checkbox-item">Textile Processing ERP</mat-checkbox>
+                <mat-checkbox class="checkbox-item">Textile Trade ERP</mat-checkbox>
+                <mat-checkbox class="checkbox-item">HRM Software</mat-checkbox>
+                <mat-checkbox class="checkbox-item">Dairy ERP</mat-checkbox>
+                <mat-checkbox class="checkbox-item">Textile CAD</mat-checkbox>
+                <mat-checkbox class="checkbox-item">Textile Costing</mat-checkbox>
+                <mat-checkbox class="checkbox-item">Offset Printing</mat-checkbox>
+                <mat-checkbox class="checkbox-item">Food Industry</mat-checkbox>
+                <mat-checkbox class="checkbox-item">Poultry</mat-checkbox>
+                <mat-checkbox class="checkbox-item">Others</mat-checkbox>
+            </section>
+        </form>
+        <form class="form-group">
+            <label for="Message">Message<span class="required-asterisk">*</span></label>
+            <mat-form-field appearance="fill" class="input-field">
+                <textarea matInput placeholder="Type here..." id="message" required></textarea>
+            </mat-form-field>
+        </form>
+        <button mat-stroked-button class="custom-submit-button" (click)="openDialog()">Submit</button>
+
+    </mat-card-content>
+</mat-card>

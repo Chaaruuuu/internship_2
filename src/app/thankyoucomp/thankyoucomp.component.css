@@ -1,0 +1,42 @@
+.thankyou-dialog {
+    background-color: #f0f4f8;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .dialog-title {
+    color: #060505; 
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .dialog-content p {
+    font-size: 1.2em;
+    margin: 20px 0;
+    color: #555;
+  }
+  
+  .dialog-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .close-button {
+    background-color:#060505; 
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .close-button:hover {
+    background-color: #060505; 
+  }
+  
